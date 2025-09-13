@@ -1922,3 +1922,186 @@ section[data-theme="dark"] .text-light {
         background-color: #0f172a;
     }
 }
+
+/* Responsive Images */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* About Section Responsive Fixes */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-image {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.profile-img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-text {
+        text-align: center;
+    }
+    
+    .profile-img {
+        max-width: 200px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        flex-direction: column-reverse;
+    }
+    
+    .hero-text {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+}
+
+/* Fix for small mobile devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .profile-img {
+        max-width: 180px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Ensure all sections are properly spaced on mobile */
+section {
+    padding: 80px 0;
+}
+
+/* Fix for iOS viewport height issue */
+@supports (-webkit-touch-callout: none) {
+    .hero, section {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Responsive Images */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.about-image {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.profile-img {
+    max-width: 280px;
+    height: auto;
+    border-radius: 15px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.03);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .about-text {
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .profile-img {
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .profile-img {
+        max-width: 200px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Fix for iOS viewport height */
+@supports (-webkit-touch-callout: none) {
+    .hero, section {
+        min-height: -webkit-fill-available;
+    }
+}
