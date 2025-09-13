@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta name="description" content="Professional portfolio of MD AMAN NAZIR, a Full Stack Developer showcasing projects, skills, and contact information.">
     <title>[MD AMAN NAZIR] | Full Stack Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="animations.css?v=1.1">
 </head>
 <body>
     <!-- Navigation -->
@@ -20,9 +23,7 @@
                 <span class="logo-text">AN</span>
                 <span class="logo-name">Aman Nazir</span>
             </div>
-            <div class="theme-toggle" id="themeToggle">
-                <i class="fas fa-moon"></i>
-            </div>
+            <!-- Theme toggle moved to bottom of page -->
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -40,16 +41,28 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div id="particles-js" class="particles-background"></div>
-        <div class="gradient-overlay"></div>
+        <div class="hero-background">
+            <div class="tech-background">
+                <div class="tech-overlay">
+                    <div class="tech-grid"></div>
+                    <div class="tech-dots"></div>
+                </div>
+            </div>
+            <div class="gradient-overlay"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="animate-text">Hi, I'm <span class="highlight">MD AMAN NAZIR</span></h1>
-                <h2 class="animate-text">Full Stack Developer</h2>
-                <p class="animate-text">I build exceptional digital experiences with clean, efficient code and beautiful design.</p>
-                <div class="cta-buttons animate-text">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                <div class="hero-text">
+                    <h1 class="animate-text">Hi, I'm <span class="highlight">MD AMAN NAZIR</span></h1>
+                    <h2 class="animate-text">Full Stack Developer</h2>
+                    <p class="animate-text">I build exceptional digital experiences with clean, efficient code and beautiful design.</p>
+                    <div class="cta-buttons animate-text">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" alt="Professional passport photo" class="passport-photo" loading="lazy">
                 </div>
             </div>
         </div>
@@ -61,7 +74,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/profile.jpg" alt="MD AMAN NAZIR" class="profile-img">
+                    <img src="C:\Users\nazir\OneDrive\Pictures\photo_suit.jpg" alt="MD AMAN NAZIR" class="profile-img">
                 </div>
                 <div class="about-text">
                     <h3>MD AMAN NAZIR</h3>
@@ -146,25 +159,69 @@
             <h2 class="section-title">My Resume</h2>
             <div class="resume-content">
                 <div class="resume-summary">
-                    <p>I am currently developing my skills in web development, with a focus on creating responsive and user-friendly applications. I'm passionate about learning and applying modern web technologies to build engaging digital experiences.</p>
+                    <p>I am a passionate beginner in web development, currently honing my skills in modern web technologies. Below you'll find my educational background and the skills I'm actively developing.</p>
                 </div>
                 <div class="resume-download">
                     <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> Download Resume</a>
                 </div>
-                <div class="experience">
-                    <h3>Experience</h3>
+                
+                <div class="education">
+                    <h3>Education</h3>
                     <div class="timeline">
                         <div class="timeline-item">
-                            <h4>Job Title</h4>
-                            <h5>Company Name | 2020 - Present</h5>
-                            <p>Key responsibilities and achievements in this role.</p>
+                            <h4>Master of Computer Applications (MCA)</h4>
+                            <h5>Lovely Professional University | Expected 2027</h5>
+                            <p>Currently pursuing my master's degree with advanced studies in software development and emerging technologies.</p>
                         </div>
                         <div class="timeline-item">
-                            <h4>Previous Job Title</h4>
-                            <h5>Previous Company | 2018 - 2020</h5>
-                            <p>Key responsibilities and achievements in this role.</p>
+                            <h4>Bachelor of Computer Applications (BCA)</h4>
+                            <h5>L. N. Mishra College of Business Management | 2025</h5>
+                            <p>Completed my undergraduate degree with a focus on software development and web technologies.</p>
                         </div>
                     </div>
+                </div>
+                
+                <div class="skills-showcase">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Frontend</h4>
+                            <ul>
+                                <li>HTML5 & CSS3</li>
+                                <li>JavaScript (ES6+)</li>
+                                <li>Responsive Design</li>
+                                <li>React (Learning)</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Backend</h4>
+                            <ul>
+                                <li>Node.js</li>
+                                <li>Express</li>
+                                <li>RESTful APIs</li>
+                                <li>Basic Database Concepts</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools & Others</h4>
+                            <ul>
+                                <li>Git & GitHub</li>
+                                <li>VS Code</li>
+                                <li>Basic Linux</li>
+                                <li>Problem Solving</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="learning">
+                    <h3>Currently Learning</h3>
+                    <ul>
+                        <li>Advanced JavaScript concepts</li>
+                        <li>React.js framework</li>
+                        <li>Backend development with Node.js</li>
+                        <li>Database management</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -184,26 +241,36 @@
                         <p><i class="fas fa-map-marker-alt"></i> Muzaffarpur, Bihar, India</p>
                     </div>
                     <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/Aman2307" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/amannazir" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" action="https://formspree.io/f/mrbadkvd" method="POST" id="contactForm">
+                    <div id="form-messages" class="form-message"></div>
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required minlength="2" maxlength="50">
+                        <div class="error-message" id="name-error"></div>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required maxlength="100">
+                        <div class="error-message" id="email-error"></div>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required minlength="5" maxlength="100">
+                        <div class="error-message" id="subject-error"></div>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required minlength="10" maxlength="1000"></textarea>
+                        <div class="error-message" id="message-error"></div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" id="submit-button">
+                        <span class="button-text">Send Message</span>
+                        <span class="button-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
                 </form>
             </div>
         </div>
@@ -228,72 +295,137 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- Theme Toggle Button (fixed at bottom) -->
+    <div class="theme-toggle-container">
+        <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+            <span class="theme-text">Dark Mode</span>
+        </div>
+    </div>
+
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Formspree Form Handling -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitButton = document.getElementById('submit-button');
+            const formMessages = document.getElementById('form-messages');
+            
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.classList.add('sending');
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    formMessages.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+                    formMessages.className = 'form-message success';
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                formMessages.textContent = 'Sorry, something went wrong. Please try again later or contact me directly at naziraman772@gmail.com';
+                formMessages.className = 'form-message error';
+            } finally {
+                formMessages.style.display = 'block';
+                submitButton.disabled = false;
+                submitButton.classList.remove('sending');
+                
+                // Auto-hide message after 5 seconds
+                setTimeout(() => {
+                    formMessages.style.display = 'none';
+                }, 5000);
+            }
+        });
+        
+        // Add basic validation
+        document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('error');
+                const errorElement = document.getElementById(`${this.id}-error`);
+                if (errorElement) {
+                    errorElement.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
     <!-- Particle.js Library -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Initialize particles.js
+        // Initialize particles.js with lighter configuration
         document.addEventListener('DOMContentLoaded', function() {
             particlesJS('particles-js', {
                 "particles": {
                     "number": {
-                        "value": 80,
+                        "value": 60,
                         "density": {
                             "enable": true,
-                            "value_area": 800
+                            "value_area": 1000
                         }
                     },
                     "color": {
-                        "value": "#4fc3f7"
+                        "value": "#e0e0e0"
                     },
                     "shape": {
                         "type": "circle",
                         "stroke": {
                             "width": 0,
-                            "color": "#000000"
+                            "color": "#ffffff"
                         },
                         "polygon": {
                             "nb_sides": 5
                         }
                     },
                     "opacity": {
-                        "value": 0.5,
-                        "random": false,
+                        "value": 0.2,
+                        "random": true,
                         "anim": {
-                            "enable": false,
+                            "enable": true,
                             "speed": 1,
-                            "opacity_min": 0.1,
+                            "opacity_min": 0.05,
                             "sync": false
                         }
                     },
                     "size": {
-                        "value": 3,
+                        "value": 2,
                         "random": true,
                         "anim": {
-                            "enable": false,
-                            "speed": 40,
-                            "size_min": 0.1,
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0.5,
                             "sync": false
                         }
                     },
                     "line_linked": {
                         "enable": true,
-                        "distance": 150,
-                        "color": "#4fc3f7",
-                        "opacity": 0.4,
-                        "width": 1
+                        "distance": 180,
+                        "color": "#e0e0e0",
+                        "opacity": 0.2,
+                        "width": 0.8
                     },
                     "move": {
                         "enable": true,
-                        "speed": 2,
+                        "speed": 1.5,
                         "direction": "none",
-                        "random": false,
+                        "random": true,
                         "straight": false,
                         "out_mode": "out",
                         "bounce": false,
                         "attract": {
                             "enable": false,
-                            "rotateX": 600,
-                            "rotateY": 1200
                         }
                     }
                 },
@@ -312,27 +444,27 @@
                     },
                     "modes": {
                         "grab": {
-                            "distance": 140,
+                            "distance": 180,
                             "line_linked": {
-                                "opacity": 1
+                                "opacity": 0.3
                             }
                         },
                         "bubble": {
-                            "distance": 400,
-                            "size": 40,
+                            "distance": 250,
+                            "size": 4,
                             "duration": 2,
-                            "opacity": 8,
-                            "speed": 3
+                            "opacity": 0.6,
+                            "speed": 2
                         },
                         "repulse": {
-                            "distance": 200,
+                            "distance": 150,
                             "duration": 0.4
                         },
                         "push": {
-                            "particles_nb": 4
+                            "particles_nb": 3
                         },
                         "remove": {
-                            "particles_nb": 2
+                            "particles_nb": 1
                         }
                     }
                 },
@@ -340,6 +472,6 @@
             });
         });
     </script>
-    <script src="script.js"></script>
+    <script src="script.js?v=1.1" defer></script>
 </body>
 </html>

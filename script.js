@@ -1,46 +1,113 @@
-// Theme Toggle Functionality
+// Theme Toggle and Detection
+function setTheme(theme) {
+    if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Check for saved theme preference or use system preference
+const currentTheme = localStorage.getItem('theme');
+setTheme(currentTheme);
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+    }
+});
+
+// Theme Toggle and Scroll Behavior
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize mobile menu
+    const hamburger = document.querySelector('.hamburger');
     if (hamburger) {
         hamburger.addEventListener('click', toggleMenu);
     }
+    
     const themeToggle = document.getElementById('themeToggle');
+    const themeToggleContainer = document.querySelector('.theme-toggle-container');
+    const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+    const themeText = themeToggle ? themeToggle.querySelector('.theme-text') : null;
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    let currentTheme = localStorage.getItem('theme');
+    let scrollTimeout;
+    
+    // Get saved theme or use system preference
+    let currentTheme = localStorage.getItem('theme') || 
+                      (prefersDarkScheme.matches ? 'dark' : 'light');
 
-    // Set initial theme
+    // Set theme for the entire page
     function setTheme(theme) {
-        if (theme === 'dark' || (!theme && prefersDarkScheme.matches)) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-            localStorage.setItem('theme', 'light');
+        const isDark = theme === 'dark';
+        
+        // Apply theme to the html element
+        document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        
+        // Update UI elements
+        if (themeIcon) {
+            themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+            themeIcon.style.transition = 'transform 0.3s ease';
         }
-        // Force a reflow to ensure the transition works
-        document.body.offsetHeight;
-        document.documentElement.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+        if (themeText) {
+            themeText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+        }
+        
+        // Save preference
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        
+        // Add smooth transition after initial load
+        if (!document.documentElement.hasAttribute('data-theme-transition')) {
+            setTimeout(() => {
+                document.documentElement.setAttribute('data-theme-transition', 'true');
+                document.documentElement.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+            }, 10);
+        }
     }
-
-    // Apply the saved theme, or the preferred color scheme
+    
+    // Handle scroll events
+    function handleScroll() {
+        // Show/hide theme toggle based on scroll
+        if (themeToggleContainer) {
+            themeToggleContainer.classList.add('scrolling');
+            
+            // Clear the timeout if it's already set
+            clearTimeout(scrollTimeout);
+            
+            // Set a timeout to remove the scrolling class
+            scrollTimeout = setTimeout(() => {
+                themeToggleContainer.classList.remove('scrolling');
+            }, 300);
+        }
+    }
+    
+    // Initialize theme
     setTheme(currentTheme);
-
+    
     // Toggle theme on button click
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
             setTheme(currentTheme === 'dark' ? 'light' : 'dark');
         });
     }
-
+    
     // Listen for system theme changes
-    prefersDarkScheme.addListener((e) => {
-        if (!localStorage.getItem('theme')) {
+    prefersDarkScheme.addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {  // Only if user hasn't set a preference
             setTheme(e.matches ? 'dark' : 'light');
         }
     });
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial check in case of page load with scroll position
+    if (window.scrollY > 0) {
+        handleScroll();
+    }
 });
 
 // Mobile Navigation
